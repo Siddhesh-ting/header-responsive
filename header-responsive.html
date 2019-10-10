@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Contact-demo Tootltip</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row-flex">
+          <div class="logo">
+            <img src="img/spacvalet-logo.png" class="img-responsive" alt="">
+          </div>
+          <div class="nav-menu hidden-xs hidden-sm hidden-md">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+          </div>
+          <div class="icon-menu visible-xs visible-sm visible-md" id="icon-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="nav-menu" id="menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        //icon animation
+        var topBar = $(".icon-menu span:nth-child(1)"),
+          middleBar = $(".icon-menu span:nth-child(2)"),
+          bottomBar = $(".icon-menu span:nth-child(3)");
+
+        $(".icon-menu").on("click", function() {
+          if (middleBar.hasClass("rot-45deg")) {
+            topBar.removeClass("rot45deg");
+            middleBar.removeClass("rot-45deg");
+            bottomBar.removeClass("hidden");
+          } else {
+            bottomBar.addClass("hidden");
+            topBar.addClass("rot45deg");
+            middleBar.addClass("rot-45deg");
+          }
+        });
+      });
+
+      // function openNav() {
+      //     document.getElementById("menu").style.transform = "translateX(0%)";
+      // }
+
+      // function closeNav() {
+      //     document.getElementById("menu").style.transform = "translateX(100%)";
+      // }
+
+      $('#icon-menu').click(function() {
+        $('#menu').toggleClass('visible');
+      });
+
+    </script>
+  </body>
+</html>
+
